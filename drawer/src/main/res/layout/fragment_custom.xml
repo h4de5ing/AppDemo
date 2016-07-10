@@ -9,10 +9,4 @@
 		android:layout_height="wrap_content"
 		android:background="?android:attr/selectableItemBackground"
 		android:text="水波纹WaveView"/>
-		<Button
-			android:id="@+id/waveviewdoc"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:background="?android:attr/selectableItemBackground"
-			android:text="水波纹使用文档"/>
 </LinearLayout>

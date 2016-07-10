@@ -32,4 +32,17 @@ dependencies {
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support:support-annotations:24.0.0'
+    compile 'com.code19.library:library:0.0.7'
+    compile files('libs/MobCommons-2016.0623.1641.jar')
+    compile files('libs/MobTools-2016.0623.1641.jar')
+    compile files('libs/ShareSDK-Core-2.7.3.jar')
+    compile files('libs/ShareSDK-Email-2.7.3.jar')
+    compile files('libs/ShareSDK-QQ-2.7.3.jar')
+    compile files('libs/ShareSDK-QZone-2.7.3.jar')
+    compile files('libs/ShareSDK-ShortMessage-2.7.3.jar')
+    compile files('libs/ShareSDK-SinaWeibo-2.7.3.jar')
+    compile files('libs/ShareSDK-Wechat-2.7.3.jar')
+    compile files('libs/ShareSDK-Wechat-Core-2.7.3.jar')
+    compile files('libs/ShareSDK-Wechat-Favorite-2.7.3.jar')
+    compile files('libs/ShareSDK-Wechat-Moments-2.7.3.jar')
 }

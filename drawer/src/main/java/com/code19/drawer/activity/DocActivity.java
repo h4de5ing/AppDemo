@@ -1,5 +1,6 @@
 package com.code19.drawer.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebChromeClient;
@@ -9,6 +10,7 @@ import android.webkit.WebView;
 import com.code19.drawer.R;
 
 public class DocActivity extends AppCompatActivity {
+    public static String DOC = "doc";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,8 @@ public class DocActivity extends AppCompatActivity {
         settings.setAppCacheEnabled(true);
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         webview.setWebChromeClient(new WebChromeClient());
-        webview.loadUrl("http://3lin9.19code.com/documents/WaveView.html");
+        Intent intent = getIntent();
+        String DocURL = intent.getStringExtra(DOC);
+        webview.loadUrl(DocURL);
     }
 }

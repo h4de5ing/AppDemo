@@ -5,6 +5,7 @@ import android.util.SparseArray;
 
 import com.code19.drawer.fragment.CustomViewFragment;
 import com.code19.drawer.fragment.MaterialFragment;
+import com.code19.drawer.fragment.SolutionFragment;
 
 /**
  * Created by Administrator on 2016/7/9.
@@ -23,7 +24,11 @@ public class FragmentFactory {
                 fragment = new CustomViewFragment();
                 break;
             case R.id.material_design:
-                fragment=new MaterialFragment();
+                fragment = new MaterialFragment();
+                break;
+            case R.id.solution:
+                fragment = new SolutionFragment();
+                break;
             default:
                 break;
         }

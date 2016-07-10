@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.code19.drawer.R;
-import com.code19.drawer.activity.DocActivity;
 import com.code19.drawer.activity.WaveViewActivity;
 
 /**
@@ -27,10 +26,8 @@ public class CustomViewFragment extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_custom, null);
-        Button waveviewdoc = (Button) view.findViewById(R.id.waveviewdoc);
         Button waveview = (Button) view.findViewById(R.id.waveview);
         waveview.setOnClickListener(this);
-        waveviewdoc.setOnClickListener(this);
         return view;
     }
 
@@ -40,9 +37,6 @@ public class CustomViewFragment extends Fragment implements View.OnClickListener
         switch (view.getId()) {
             case R.id.waveview:
                 intent = new Intent(getActivity(), WaveViewActivity.class);
-                break;
-            case R.id.waveviewdoc:
-                intent = new Intent(getActivity(), DocActivity.class);
                 break;
         }
         startActivity(intent);

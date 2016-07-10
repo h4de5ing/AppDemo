@@ -11,9 +11,9 @@
 			android:icon="@drawable/ic_menu_gallery"
 			android:title="MaterialDesign"/>
         <item
-			android:id="@+id/nav_slideshow"
+			android:id="@+id/solution"
 			android:icon="@drawable/ic_menu_slideshow"
-			android:title="高集成智能模式广播"/>
+			android:title="解决方案"/>
         <item
 			android:id="@+id/nav_manage"
 			android:icon="@drawable/ic_menu_manage"
