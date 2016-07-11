@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, FragmentFactory.getFragment(R.id.custom_view)).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, FragmentFactory.getFragment(R.id.nav_custom_view)).commit();
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

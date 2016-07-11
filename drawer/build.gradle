@@ -1,9 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+        }
+    }
     compileSdkVersion 24
     buildToolsVersion "24.0.0"
-
     defaultConfig {
         applicationId "com.code19.drawer"
         minSdkVersion 19
