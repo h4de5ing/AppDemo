@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   面试小知识
+  </title>
+  <meta charset="utf-8"/>
+ </head>
+ <body>
+  <xmp style="display:none;" theme="simplex">
+   # 面试小知识
+- 进程间通信
+  ```
+  Intent
+  AIDL
+  Socket
+  Messengr
+  ContentProvider
+  RemoteViews
+  ```
+- 搜索引擎小知识
+```
+"" 双引号,完整匹配
+-减号,去除信息
+*通配符
+site:site.com key 站内搜索
+&safe=off 关闭安全搜索
+```
+- 取出默认闪退Dialog
+```java
+public class App extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Thread.setDefaultUncaughtExceptionHandler(new MyUnCaughtExceptionHandler());
+    }
+
+    private class MyUnCaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
+        @Override
+        public void uncaughtException(Thread thread, Throwable throwable) {
+            throwable.printStackTrace();
+            Intent intent = new Intent(App.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            App.this.startActivity(intent);
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+        }
+    }
+}
+```
+  </xmp>
+  <script src="v/strapdown.js">
+  </script>
+ </body>
+</html>

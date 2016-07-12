@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   升级AndroidStudio到最新版
+  </title>
+  <meta charset="utf-8"/>
+ </head>
+ <body>
+  <xmp style="display:none;" theme="simplex">
+   # 升级AndroidStudio到最新版
+* 很多时候AndroidStudio升级无法正常升级到最新版
+* 经过网络查找得知可以通过离线patch的方法来升级，如果升级版本跨度过大，是没有patch包的
+* 通过以下可以查询到每个版本的BuildNumber,多次patch方式来升级到最新版
+```
+http://tools.android.com/build/studio/idea-tags
+```
+* 比如我的Android Studio版本是2.0 Preview 4 (2.0.0.4)，Build Number是143.2489090
+* 我选择升级到2.0 Beta 1 (2.0.0.10) ，Build Number是143.2580554
+* 那么下载包地址就是https://dl.google.com/android/studio/patches/AI-143.2489090-143.2580554-patch-win-jar
+* 其他平台格式如下：
+```
+linux: AI-$FROM-$TO-patch-unix.jar
+windows: AI-$FROM-$TO-patch-win.jar
+MacOS: AI-$FROM-$TO-patch-mac.jar
+```
+* 最后将pathch文件拷贝到安装目录下运行即可
+```
+java -cp AI-143.2489090-143.2580554-patch-win.jar com.intellij.updater.Runner install .
+```
+* 其实最简单的方法就是去下面这个页面下载一个不带sdk的zip版压缩包,解压就可以用了。
+```
+http://tools.android.com/download/studio/builds/
+```
+  </xmp>
+  <script src="v/strapdown.js">
+  </script>
+ </body>
+</html>
