@@ -3,10 +3,22 @@
 			  android:layout_width="match_parent"
 			  android:layout_height="match_parent"
 			  android:orientation="vertical">
-<Button
-	android:id="@+id/check_login"
-	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	android:background="?android:attr/selectableItemBackground"
-	android:text="登录验证"/>
+		<Button
+			android:id="@+id/sol_check_login"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?android:attr/selectableItemBackground"
+			android:text="登录验证"/>
+		<Button
+			android:id="@+id/sol_wechat_scan"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?android:attr/selectableItemBackground"
+			android:text="微信扫描"/>
+		<Button
+			android:id="@+id/sol_alipay_scan"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?android:attr/selectableItemBackground"
+			android:text="支付宝扫描"/>
 </LinearLayout>
