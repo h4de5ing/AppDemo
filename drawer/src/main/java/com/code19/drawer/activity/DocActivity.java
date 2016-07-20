@@ -1,21 +1,21 @@
 package com.code19.drawer.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.code19.drawer.R;
 
-public class DocActivity extends AppCompatActivity {
-    public static String DOC = "doc";
+
+public class DocActivity extends BaseActivity {
+    public static String DOCURL = "docurl";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doc);
+        initActionBar(true, "文档");
         WebView webview = (WebView) findViewById(R.id.webview);
         WebSettings settings = webview.getSettings();
         settings.setJavaScriptEnabled(true);
@@ -28,8 +28,6 @@ public class DocActivity extends AppCompatActivity {
         settings.setAppCacheEnabled(true);
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         webview.setWebChromeClient(new WebChromeClient());
-        Intent intent = getIntent();
-        String DocURL = intent.getStringExtra(DOC);
-        webview.loadUrl(DocURL);
+        webview.loadUrl(getIntent().getStringExtra(DOCURL));
     }
 }

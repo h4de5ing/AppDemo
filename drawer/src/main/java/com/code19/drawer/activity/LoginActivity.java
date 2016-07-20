@@ -35,12 +35,6 @@ import com.code19.drawer.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.sharesdk.framework.Platform;
-import cn.sharesdk.framework.ShareSDK;
-import cn.sharesdk.sina.weibo.SinaWeibo;
-import cn.sharesdk.tencent.qq.QQ;
-import cn.sharesdk.wechat.friends.Wechat;
-
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
@@ -373,22 +367,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login_qq:
-                Platform qq = ShareSDK.getPlatform(QQ.NAME);
-                qq.SSOSetting(false);
-                qq.authorize();
                 break;
             case R.id.login_webo:
-                Platform weibo = ShareSDK.getPlatform(SinaWeibo.NAME);
-                weibo.SSOSetting(false);
-                weibo.authorize();
                 break;
             case R.id.login_wechat:
-                Platform wechat = ShareSDK.getPlatform(Wechat.NAME);
-                wechat.SSOSetting(false);
-                wechat.authorize();
                 break;
         }
-        //Toast.makeText(this, view.getId() + ",登陆", Toast.LENGTH_SHORT).show();
     }
 }
 

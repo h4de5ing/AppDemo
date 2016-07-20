@@ -8,17 +8,29 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="?android:attr/selectableItemBackground"
-			android:text="登录验证"/>
+			android:text="@string/login_check"/>
+		<Button
+			android:id="@+id/sol_qr_scan"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?android:attr/selectableItemBackground"
+			android:text="@string/scan_qr"/>
+		<Button
+			android:id="@+id/sol_gqr_scan"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?android:attr/selectableItemBackground"
+			android:text="@string/scan_gqr"/>
 		<Button
 			android:id="@+id/sol_wechat_scan"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="?android:attr/selectableItemBackground"
-			android:text="微信扫描"/>
+			android:text="@string/scan_wechat"/>
 		<Button
 			android:id="@+id/sol_alipay_scan"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="?android:attr/selectableItemBackground"
-			android:text="支付宝扫描"/>
+			android:text="@string/scan_alipay"/>
 </LinearLayout>

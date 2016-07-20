@@ -1,5 +1,7 @@
 package com.code19.drawer;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -7,13 +9,19 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity
+import com.code19.drawer.activity.BaseActivity;
+import com.code19.drawer.activity.SearchActivity;
+import com.code19.drawer.activity.SettingsActivity;
+import com.code19.drawer.utils.FragmentFactory;
+import com.code19.drawer.utils.Utils;
+
+
+public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -56,33 +64,66 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                navigateToSearch(MainActivity.this);
+                break;
+            case R.id.action_settings:
+                startActivity(new Intent(this, SettingsActivity.class));
+                break;
+            case R.id.action_opensource:
+                Utils.openAssetsDoc(this, "other/OpenSource.html");
+                break;
+            case R.id.action_about:
+                Utils.openAssetsDoc(this, "other/About.html");
+                break;
         }
-
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        String title = getString(R.string.app_name);
         int id = item.getItemId();
+        switch (id) {
+            case R.id.nav_custom_view:
+                title = getString(R.string.nav_custom_view);
+                break;
+            case R.id.nav_material_design:
+                title = getString(R.string.nav_materialdesign);
+                break;
+            case R.id.nav_solution:
+                title = getString(R.string.nav_solution);
+                break;
+            case R.id.nav_blog:
+                title = getString(R.string.nav_blog);
+                break;
+            case R.id.nav_opensource:
+                title = getString(R.string.nav_opensource);
+                break;
+            case R.id.nav_openproject:
+                title = getString(R.string.nav_openproject);
+                break;
+        }
+        getSupportActionBar().setTitle(title);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment, FragmentFactory.getFragment(id)).commit();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public static void navigateToSearch(Activity context) {
+        final Intent intent = new Intent(context, SearchActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        intent.setAction("navigate_search");
+        context.startActivity(intent);
     }
 }

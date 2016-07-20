@@ -16,10 +16,12 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            multiDexEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -27,26 +29,21 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/jsoup-1.8.1.jar')
+    compile project(':libary')
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.android.support:design:24.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha3'
     compile 'com.android.support:cardview-v7:24.0.0'
+    compile 'com.code19.library:library:0.0.9'
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.0@aar'
+    compile 'cn.bingoogolapple:bga-zxing:1.1.0@aar'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.android.support:support-v4:24.0.0'
+    compile 'com.android.support:support-vector-drawable:24.0.0'
     testCompile 'junit:junit:4.12'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support:support-annotations:24.0.0'
-    compile 'com.code19.library:library:0.0.7'
-    compile files('libs/MobCommons-2016.0623.1641.jar')
-    compile files('libs/MobTools-2016.0623.1641.jar')
-    compile files('libs/ShareSDK-Core-2.7.3.jar')
-    compile files('libs/ShareSDK-Email-2.7.3.jar')
-    compile files('libs/ShareSDK-QQ-2.7.3.jar')
-    compile files('libs/ShareSDK-QZone-2.7.3.jar')
-    compile files('libs/ShareSDK-ShortMessage-2.7.3.jar')
-    compile files('libs/ShareSDK-SinaWeibo-2.7.3.jar')
-    compile files('libs/ShareSDK-Wechat-2.7.3.jar')
-    compile files('libs/ShareSDK-Wechat-Core-2.7.3.jar')
-    compile files('libs/ShareSDK-Wechat-Favorite-2.7.3.jar')
-    compile files('libs/ShareSDK-Wechat-Moments-2.7.3.jar')
-    compile files('libs/jsoup-1.8.1.jar')
 }

@@ -11,7 +11,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.code19.drawer.R;
+import com.code19.drawer.activity.GqrActivity;
 import com.code19.drawer.activity.LoginActivity;
+import com.code19.drawer.activity.QrScannerActivity;
+
 
 /**
  * Created by Gh0st on 2016/7/10.
@@ -27,9 +30,13 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_solution, null);
+        Button solgqrscan = (Button) view.findViewById(R.id.sol_gqr_scan);
+        Button solqrscan = (Button) view.findViewById(R.id.sol_qr_scan);
         Button solalipayscan = (Button) view.findViewById(R.id.sol_alipay_scan);
         Button solwechatscan = (Button) view.findViewById(R.id.sol_wechat_scan);
         Button solchecklogin = (Button) view.findViewById(R.id.sol_check_login);
+        solgqrscan.setOnClickListener(this);
+        solqrscan.setOnClickListener(this);
         solalipayscan.setOnClickListener(this);
         solwechatscan.setOnClickListener(this);
         solchecklogin.setOnClickListener(this);
@@ -40,7 +47,13 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.sol_check_login:
-                startActivity(new Intent(getActivity(), LoginActivity.class));
+                this.startActivity(new Intent(getActivity(), LoginActivity.class));
+                break;
+            case R.id.sol_qr_scan:
+                startActivity(new Intent(getActivity(), QrScannerActivity.class));
+                break;
+            case R.id.sol_gqr_scan:
+                this.startActivity(new Intent(getActivity(), GqrActivity.class));
                 break;
             case R.id.sol_wechat_scan:
                 toWeChatScan();
@@ -63,8 +76,6 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
 
     private void toAliPayScan() {
         try {
-            //支付宝跳过开启动画打开扫码和付款码的url scheme分别是alipayqr://platformapi/startapp?saId=10000007和
-            //alipayqr://platformapi/startapp?saId=20000056
             Uri uri = Uri.parse("alipayqr://platformapi/startapp?saId=10000007");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);

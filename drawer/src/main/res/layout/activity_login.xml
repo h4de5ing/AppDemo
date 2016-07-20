@@ -67,6 +67,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginTop="16dp"
+				android:background="?android:attr/selectableItemBackground"
 				android:text="登录"
 				android:textStyle="bold"/>
 			<Button
@@ -81,28 +82,35 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:gravity="center_horizontal"
-				android:text="@string/other_login"/>
+				android:text="@string/login_other"/>
 			<LinearLayout
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
 				android:orientation="horizontal">
 				<TextView
 					android:id="@+id/login_webo"
-					android:layout_width="wrap_content"
+					android:layout_width="0dp"
 					android:layout_height="wrap_content"
-					android:drawableTop="@drawable/weibo_binding"
+					android:layout_weight="1"
+					android:drawableTop="@drawable/share_weibo"
+					android:gravity="center_horizontal"
 					android:text="微博"/>
 				<TextView
 					android:id="@+id/login_wechat"
-					android:layout_width="wrap_content"
+					android:layout_width="0dp"
 					android:layout_height="wrap_content"
-					android:drawableTop="@drawable/wechat_binding"
+					android:layout_weight="1"
+					android:drawableTop="@drawable/share_weixin"
+					android:gravity="center_horizontal"
 					android:text="微信"/>
 				<TextView
 					android:id="@+id/login_qq"
-					android:layout_width="wrap_content"
+					android:layout_width="0dp"
 					android:layout_height="wrap_content"
-					android:drawableTop="@drawable/qq_binding"
+					android:layout_weight="1"
+					android:drawableTop="@drawable/share_qq"
+					android:gravity="center_horizontal"
 					android:text="QQ"/>
 			</LinearLayout>
         </LinearLayout>

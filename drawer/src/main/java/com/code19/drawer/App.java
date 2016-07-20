@@ -3,6 +3,8 @@ package com.code19.drawer;
 import android.app.Application;
 import android.content.Intent;
 
+import com.code19.drawer.utils.Utils;
+
 /**
  * Created by Administrator on 2016/7/12.
  */
@@ -18,6 +20,7 @@ public class App extends Application {
         @Override
         public void uncaughtException(Thread thread, Throwable throwable) {
             throwable.printStackTrace();
+            Utils.crash2File(App.this, throwable.getMessage());
             Intent intent = new Intent(App.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             App.this.startActivity(intent);

@@ -15,3 +15,6 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-keep class net.sourceforge.zbar.** { *; }
+-keep interface net.sourceforge.zbar.** { *; }
+-dontwarn net.sourceforge.zbar.**

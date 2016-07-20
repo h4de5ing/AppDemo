@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="home">
-		<item>关于ITC</item>
-		<item>产品展示</item>
-		<item>新闻</item>
-		<item>解决方案</item>
-		<item>成功案例</item>
-		<item>联系我们</item>
-		<item>人力资源</item>
-	</string-array>
 </resources>

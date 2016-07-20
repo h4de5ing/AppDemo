@@ -5,31 +5,31 @@
         <item
 			android:id="@+id/nav_custom_view"
 			android:icon="@drawable/ic_menu_camera"
-			android:title="自定义控件"/>
+			android:title="@string/nav_custom_view"/>
         <item
 			android:id="@+id/nav_material_design"
 			android:icon="@drawable/ic_menu_gallery"
-			android:title="MaterialDesign"/>
+			android:title="@string/nav_materialdesign"/>
         <item
 			android:id="@+id/nav_solution"
 			android:icon="@drawable/ic_menu_slideshow"
-			android:title="解决方案"/>
+			android:title="@string/nav_solution"/>
         <item
 			android:id="@+id/nav_blog"
 			android:icon="@drawable/ic_menu_manage"
-			android:title="博客"/>
+			android:title="@string/nav_blog"/>
     </group>
 
-    <item android:title="Github">
+    <item android:title="@string/nav_github">
         <menu>
             <item
 				android:id="@+id/nav_opensource"
 				android:icon="@drawable/ic_menu_share"
-				android:title="开源框架"/>
+				android:title="@string/nav_opensource"/>
             <item
 				android:id="@+id/nav_openproject"
 				android:icon="@drawable/ic_menu_send"
-				android:title="完整项目"/>
+				android:title="@string/nav_openproject"/>
         </menu>
     </item>
 

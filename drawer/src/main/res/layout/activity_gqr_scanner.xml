@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	android:id="@+id/activity_gqr"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context="com.code19.drawer.activity.GqrActivity">
+    <LinearLayout
+		style="@style/MatchWrap.Horizontal"
+		android:layout_width="384dp"
+		android:layout_height="170dp"
+		android:gravity="center_horizontal"
+		tools:layout_editor_absoluteX="0dp"
+		tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+			android:id="@+id/iv_chinese"
+			android:layout_width="150dp"
+			android:layout_height="150dp"
+			android:layout_margin="10dp"
+			android:src="@drawable/user_avatar"
+			tools:layout_editor_absoluteX="32dp"
+			tools:layout_editor_absoluteY="10dp"/>
+
+        <ImageView
+			android:id="@+id/iv_english"
+			android:layout_width="150dp"
+			android:layout_height="150dp"
+			android:layout_margin="10dp"
+			android:src="@drawable/user_avatar"
+			tools:layout_editor_absoluteX="202dp"
+			tools:layout_editor_absoluteY="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+		style="@style/MatchWrap.Horizontal"
+		android:layout_width="384dp"
+		android:layout_height="40dp"
+		tools:layout_editor_absoluteX="0dp"
+		tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+			style="@style/AutoWrapTv"
+			android:layout_width="182dp"
+			android:layout_height="30dp"
+			android:onClick="decodeChinese"
+			android:text="识别中文二维码"
+			tools:layout_editor_absoluteX="5dp"
+			tools:layout_editor_absoluteY="5dp"/>
+
+        <TextView
+			style="@style/AutoWrapTv"
+			android:layout_width="182dp"
+			android:layout_height="30dp"
+			android:onClick="decodeEnglish"
+			android:text="识别英文二维码"
+			tools:layout_editor_absoluteX="197dp"
+			tools:layout_editor_absoluteY="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+		style="@style/MatchWrap.Horizontal"
+		android:layout_width="384dp"
+		android:layout_height="170dp"
+		android:gravity="center_horizontal"
+		tools:layout_editor_absoluteX="0dp"
+		tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+			android:id="@+id/iv_chinese_logo"
+			android:layout_width="150dp"
+			android:layout_height="150dp"
+			android:layout_margin="10dp"
+			android:src="@drawable/user_avatar"
+			tools:layout_editor_absoluteX="32dp"
+			tools:layout_editor_absoluteY="10dp"/>
+
+        <ImageView
+			android:id="@+id/iv_english_logo"
+			android:layout_width="150dp"
+			android:layout_height="150dp"
+			android:layout_margin="10dp"
+			android:src="@drawable/user_avatar"
+			tools:layout_editor_absoluteX="202dp"
+			tools:layout_editor_absoluteY="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+		style="@style/MatchWrap.Horizontal"
+		android:layout_width="384dp"
+		android:layout_height="40dp"
+		tools:layout_editor_absoluteX="0dp"
+		tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+			style="@style/AutoWrapTv"
+			android:layout_width="182dp"
+			android:layout_height="30dp"
+			android:onClick="decodeChineseWithLogo"
+			android:text="识别带logo的中文二维码"
+			tools:layout_editor_absoluteX="5dp"
+			tools:layout_editor_absoluteY="5dp"/>
+
+        <TextView
+			style="@style/AutoWrapTv"
+			android:layout_width="182dp"
+			android:layout_height="30dp"
+			android:onClick="decodeEnglishWithLogo"
+			android:text="识别带logo的英文二维码"
+			tools:layout_editor_absoluteX="197dp"
+			tools:layout_editor_absoluteY="5dp"/>
+    </LinearLayout>
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:src="@mipmap/test_isbn"/>
+    <TextView
+		android:id="@+id/decode_isbn"
+		style="@style/MatchWrapTv"
+		android:layout_width="384dp"
+		android:layout_height="30dp"
+		android:onClick="decodeIsbn"
+		android:text="识别ISBN"
+		tools:layout_editor_absoluteX="0dp"
+		tools:layout_editor_absoluteY="0dp"/>
+</LinearLayout>

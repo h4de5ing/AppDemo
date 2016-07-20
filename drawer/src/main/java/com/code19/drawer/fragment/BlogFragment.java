@@ -1,7 +1,6 @@
 package com.code19.drawer.fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,7 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.code19.drawer.R;
-import com.code19.drawer.activity.DocActivity;
+import com.code19.drawer.utils.Utils;
 
 import java.io.IOException;
 
@@ -24,13 +23,11 @@ import java.io.IOException;
  * 23:46
  */
 public class BlogFragment extends Fragment {
-    private float mDensity;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_blog, null);
-        mDensity = getResources().getDisplayMetrics().density;
         ListView bloglistview = (ListView) view.findViewById(R.id.blog_listview);
         final BlogAdapter adapter = new BlogAdapter(getActivity(), R.layout.item_blog);
         try {
@@ -47,9 +44,7 @@ public class BlogFragment extends Fragment {
         bloglistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getActivity(), DocActivity.class);
-                intent.putExtra(DocActivity.DOC, "file:///android_asset/blog/" + adapter.getItem(i));
-                startActivity(intent);
+                Utils.openAssetsDoc(getActivity(), adapter.getItem(i));
             }
         });
         return view;
@@ -68,9 +63,6 @@ public class BlogFragment extends Fragment {
             LayoutInflater inflater = LayoutInflater.from(getActivity());
             View view = inflater.inflate(mResourceId, null);
             TextView tv_name = (TextView) view.findViewById(R.id.name);
-            tv_name.setTextSize(20);
-            int top = (int) (100 / mDensity + 0.5f);
-            tv_name.setPadding(0, top, 0, 0);
             String s = getItem(position);
             tv_name.setText(s.substring(0, s.lastIndexOf(".")));
             return view;

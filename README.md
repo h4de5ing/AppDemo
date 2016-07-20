@@ -5,3 +5,11 @@
 
 <a href="https://github.com/h4de5ing/AppDemo">代码</a>
 <a href="https://github.com/h4de5ing/AppDemo/wiki">笔记</a>
+
+# 第三方开源框架
+
+工具类库:[AndroidCommon](https://github.com/h4de5ing/AndroidCommon)
+
+二维码:[BGAQRCode-Android](https://github.com/bingoogolapple/BGAQRCode-Android)
+
+圆形图片:[CircleImageView](https://github.com/hdodenhof/CircleImageView)
