@@ -1,6 +1,7 @@
 package com.code19.drawer;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 
 import com.code19.drawer.utils.Utils;
@@ -10,10 +11,17 @@ import com.code19.drawer.utils.Utils;
  */
 
 public class App extends Application {
+    private static Context mContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext = this;
         Thread.setDefaultUncaughtExceptionHandler(new MyUnCaughtExceptionHandler());
+    }
+
+    public static Context getContext() {
+        return mContext;
     }
 
     private class MyUnCaughtExceptionHandler implements Thread.UncaughtExceptionHandler {

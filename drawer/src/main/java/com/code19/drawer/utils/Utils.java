@@ -3,6 +3,7 @@ package com.code19.drawer.utils;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.widget.Toast;
 
 import com.code19.drawer.activity.DocActivity;
@@ -51,6 +52,26 @@ public class Utils {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static boolean saveImg(Bitmap bitmap, String filename) {
+        boolean compress = false;
+        File file = new File("/sdcard/", filename);
+        if (file.exists()) {
+            file.delete();
+        }
+        try {
+            FileOutputStream outputStream = new FileOutputStream(file);
+            compress = bitmap.compress(Bitmap.CompressFormat.PNG, 90, outputStream);
+            outputStream.flush();
+            outputStream.close();
+            compress = true;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return compress;
     }
 
     /**

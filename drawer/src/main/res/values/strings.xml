@@ -91,5 +91,19 @@
     <string name="pref_title_ringtone">Ringtone</string>
     <string name="pref_ringtone_silent">Silent</string>
 
-    <string name="pref_title_vibrate">Vibrate</string><string name="nav_custom_view">自定义控件</string><string name="nav_solution">解决方案</string><string name="nav_blog">博客</string><string name="nav_opensource">开源框架</string><string name="nav_openproject">完整项目</string><string name="nav_materialdesign">MaterialDesign</string><string name="nav_github">Github</string>
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="nav_custom_view">自定义控件</string>
+    <string name="nav_solution">解决方案</string>
+    <string name="nav_blog">博客</string>
+    <string name="nav_opensource">开源框架</string>
+    <string name="nav_openproject">完整项目</string>
+    <string name="nav_materialdesign">MaterialDesign</string>
+    <string name="nav_github">Github</string>
+    <string name="recyclerview">RecyclerView</string>
+        <string name="resume">简历</string>
+    <string name="light_format" formatted="false">
+        <![CDATA[
+        <font color=\'#28b5f5\'>Discover</font> and <font color=\'#28b5f5\'>play</font>games.
+        ]]>
+    </string>
 </resources>

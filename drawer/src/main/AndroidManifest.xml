@@ -52,6 +52,10 @@
         </activity>
         <activity android:name=".activity.SearchActivity">
         </activity>
+        <activity android:name=".activity.MaterialBadgeActivity">
+        </activity>
+        <activity android:name=".activity.ResumeActivity">
+        </activity>
     </application>
 
 </manifest>
