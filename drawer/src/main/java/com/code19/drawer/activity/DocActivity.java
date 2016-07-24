@@ -18,7 +18,11 @@ public class DocActivity extends BaseActivity {
         initActionBar(true, "文档");
         WebView webview = (WebView) findViewById(R.id.webview);
         WebSettings settings = webview.getSettings();
-        settings.setJavaScriptEnabled(true);
+        //settings.setJavaScriptEnabled(true);
+        settings.setAllowFileAccess(false);
+        settings.setAllowFileAccessFromFileURLs(false);
+        settings.setAllowUniversalAccessFromFileURLs(false);
+        //防止越权访问，跨域等安全问题
         settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         settings.setLoadWithOverviewMode(true);
         settings.setBuiltInZoomControls(true);

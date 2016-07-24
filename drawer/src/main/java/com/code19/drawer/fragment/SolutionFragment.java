@@ -30,11 +30,13 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_solution, null);
+        Button solfloatmenu = (Button) view.findViewById(R.id.sol_float_menu);
         Button solgqrscan = (Button) view.findViewById(R.id.sol_gqr_scan);
         Button solqrscan = (Button) view.findViewById(R.id.sol_qr_scan);
         Button solalipayscan = (Button) view.findViewById(R.id.sol_alipay_scan);
         Button solwechatscan = (Button) view.findViewById(R.id.sol_wechat_scan);
         Button solchecklogin = (Button) view.findViewById(R.id.sol_check_login);
+        solfloatmenu.setOnClickListener(this);
         solgqrscan.setOnClickListener(this);
         solqrscan.setOnClickListener(this);
         solalipayscan.setOnClickListener(this);
@@ -60,6 +62,8 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
                 break;
             case R.id.sol_alipay_scan:
                 toAliPayScan();
+                break;
+            case R.id.sol_float_menu:
                 break;
         }
     }
