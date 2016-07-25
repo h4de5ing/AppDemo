@@ -7,7 +7,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
-	tools:context="com.code19.drawer.activity.GqrActivity">
+	tools:context="com.code19.drawer.activity.SolutionGqrActivity">
     <LinearLayout
 		style="@style/MatchWrap.Horizontal"
 		android:layout_width="384dp"

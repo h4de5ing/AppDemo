@@ -13,11 +13,11 @@ import com.code19.drawer.view.WaveView;
  * Created by Gh0st on 2016/7/9.
  * 4:11
  */
-public class WaveViewActivity extends BaseActivity {
+public class CustomWaveViewActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wave_view);
+        setContentView(R.layout.activity_custom_wave_view);
         initActionBar(true, "水波纹");
         WaveView waveview = (WaveView) findViewById(R.id.waveview);
         waveview.start();

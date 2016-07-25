@@ -11,9 +11,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.code19.drawer.R;
-import com.code19.drawer.activity.GqrActivity;
-import com.code19.drawer.activity.LoginActivity;
-import com.code19.drawer.activity.QrScannerActivity;
+import com.code19.drawer.activity.SolutionGqrActivity;
+import com.code19.drawer.activity.SolutionLoginActivity;
+import com.code19.drawer.activity.SolutionQrScannerActivity;
 
 
 /**
@@ -49,13 +49,13 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.sol_check_login:
-                this.startActivity(new Intent(getActivity(), LoginActivity.class));
+                this.startActivity(new Intent(getActivity(), SolutionLoginActivity.class));
                 break;
             case R.id.sol_qr_scan:
-                startActivity(new Intent(getActivity(), QrScannerActivity.class));
+                startActivity(new Intent(getActivity(), SolutionQrScannerActivity.class));
                 break;
             case R.id.sol_gqr_scan:
-                this.startActivity(new Intent(getActivity(), GqrActivity.class));
+                this.startActivity(new Intent(getActivity(), SolutionGqrActivity.class));
                 break;
             case R.id.sol_wechat_scan:
                 toWeChatScan();

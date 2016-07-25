@@ -8,46 +8,106 @@
  </head>
  <body>
   <xmp style="display:none;" theme="simplex">
-   # 面试小知识
-- 进程间通信
+  # 面试小知识
+  - 进程间通信
   ```
   Intent
   AIDL
   Socket
-  Messengr
+  Messenger
   ContentProvider
   RemoteViews
   ```
-- 搜索引擎小知识
-```
-"" 双引号,完整匹配
--减号,去除信息
-*通配符
-site:site.com key 站内搜索
-&safe=off 关闭安全搜索
-```
-- 取出默认闪退Dialog
-```java
-public class App extends Application {
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        Thread.setDefaultUncaughtExceptionHandler(new MyUnCaughtExceptionHandler());
-    }
 
-    private class MyUnCaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
-        @Override
-        public void uncaughtException(Thread thread, Throwable throwable) {
-            throwable.printStackTrace();
-            Intent intent = new Intent(App.this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            App.this.startActivity(intent);
-            android.os.Process.killProcess(android.os.Process.myPid());
-            System.exit(1);
-        }
-    }
-}
-```
+  - 搜索引擎小知识
+  ```
+  "" 双引号,完整匹配
+  -减号,去除信息
+  *通配符
+  site:site.com key 站内搜索
+  &safe=off 关闭安全搜索
+  ```
+  - 取出默认闪退Dialog
+  ```java
+  public class App extends Application {
+  @Override
+  public void onCreate() {
+  super.onCreate();
+  Thread.setDefaultUncaughtExceptionHandler(new MyUnCaughtExceptionHandler());
+  }
+
+  private class MyUnCaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
+  @Override
+  public void uncaughtException(Thread thread, Throwable throwable) {
+  throwable.printStackTrace();
+  Intent intent = new Intent(App.this, MainActivity.class);
+  intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+  App.this.startActivity(intent);
+  android.os.Process.killProcess(android.os.Process.myPid());
+  System.exit(1);
+  }
+  }
+  }
+  ```
+  - 国内Top500Android应用分析报告
+  * minSdkVersion 14 38%
+  * largeHeap on 51%
+  * 开源项目
+  - 网络：Okhttp 135 Volley 105
+  - 图片：UIL 130 Fresco 88 Glide 54 Picasso 38
+  - 注解：ButterKnife 63 Dagger 16
+  - Json：Gson 227 Fastjson 87 Jackson 26
+  - Protocol Buffers:wire 72 protobuf 67
+  - 数据库：GreenDao 41 OrmLite 27
+  - Event：EventBus 132 Otto 12
+  - HotFix：AndFix 34 Dexposed 24 Nuwa 7
+  - Plugin：Droidplugin 8 Dynamic-Load-Apk 5 DynameicAPK 7
+  - PullToRefresh:Android-PullToRefresh 92 android-Ultra-Pull-To-Refresh 27
+
+  - Google Play Top200应用分析报告
+  * minSdkVersion 14 19% 15 19% 16 24%
+  * largeHeap on 40%
+  * 开源项目
+  - 网络： Okhttp 41 Volley 26
+  - 图片：Picasso 22 Glide 15 Fresco 9 UIL 8
+  - 注解：Dagger 33 ButterKnife 16
+  - Json：Gson 57 Jackson 15
+  - Protocol Buffers:Protobuf 11 Wire 3
+  - 数据库： OrmLite 5 GreenDao4
+  - Event:Otto 18 EventBus 17
+  - PullToRefresh:Android-PullToRefresh 5 android-Ultra-Pull-To-Refresh 2
+
+  - 透明状态栏
+
+      ```xml
+      <!--value/style.xml-->
+      <!-- Base application theme. -->
+      <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+</style>
+      <style name="AppTheme" parent="AppTheme.Base"></style>
+
+      <!--value-v19/style.xml-->
+      <style name="AppTheme" parent="AppTheme.Base">
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowTranslucentNavigation">true</item>
+</style>
+
+      <!--value-v21-->
+      <style name="AppTheme" parent="AppTheme.Base">
+    <!--透明状态栏-->
+    <item name="android:windowTranslucentStatus">true</item>
+    <!--透明导航栏-->
+    <item name="android:windowTranslucentNavigation">true</item>
+    <!--使状态栏，导航栏可绘制-->
+    <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+</style>
+      ```
+
+      - 设计模式
+      * 单例设计模式,常常将工具类方法写成静态方法,方法数据过多消耗内存过大,将工具类做成单例类,通过单例获取对象并调用方法
+      * 如果单例对象持有Context对象，很容易造成内存溢出，需要传递ApplicationContex
+
   </xmp>
   <script src="v/strapdown.js">
   </script>

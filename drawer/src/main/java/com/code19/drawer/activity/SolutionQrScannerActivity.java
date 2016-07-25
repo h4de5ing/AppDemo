@@ -9,13 +9,13 @@ import com.code19.drawer.R;
 import cn.bingoogolapple.qrcode.core.QRCodeView;
 import cn.bingoogolapple.qrcode.zxing.ZXingView;
 
-public class QrScannerActivity extends BaseActivity implements QRCodeView.Delegate {
+public class SolutionQrScannerActivity extends BaseActivity implements QRCodeView.Delegate {
     private QRCodeView mQRCodeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qr_scanner);
+        setContentView(R.layout.activity_solution_qr_scanner);
         initActionBar(true,getString(R.string.scan_qr));
         mQRCodeView = (ZXingView) findViewById(R.id.zxingview);
         mQRCodeView.setDelegate(this);

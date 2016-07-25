@@ -40,7 +40,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor>, OnClickListener {
+public class SolutionLoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor>, OnClickListener {
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_solution_login);
         TextView qqlogin = (TextView) findViewById(R.id.login_qq);
         TextView wechatlogin = (TextView) findViewById(R.id.login_wechat);
         TextView webologin = (TextView) findViewById(R.id.login_webo);
@@ -282,7 +282,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
         //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
         ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(LoginActivity.this,
+                new ArrayAdapter<>(SolutionLoginActivity.this,
                         android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
 
         mEmailView.setAdapter(adapter);
@@ -319,7 +319,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             try {
                 // Simulate network access.
                 Thread.sleep(2000);
-                LoginUtil.checkLogin(LoginActivity.this, new LoginUtil.LoginCallback() {
+                LoginUtil.checkLogin(SolutionLoginActivity.this, new LoginUtil.LoginCallback() {
                     @Override
                     public void onLogin() {
                     }
@@ -348,8 +348,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             if (success) {
                 setResult(Activity.RESULT_OK); //登陆成功后设置
                 //finish();
-                Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
-                AccountMgr.get().Logined(LoginActivity.this, mEmail, mPassword);
+                Toast.makeText(SolutionLoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
+                AccountMgr.get().Logined(SolutionLoginActivity.this, mEmail, mPassword);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();

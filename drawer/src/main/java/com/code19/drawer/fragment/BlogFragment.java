@@ -16,6 +16,8 @@ import com.code19.drawer.R;
 import com.code19.drawer.utils.Utils;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -23,11 +25,13 @@ import java.io.IOException;
  * 23:46
  */
 public class BlogFragment extends Fragment {
+    private List<String> mList;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_blog, null);
+        mList = new ArrayList<String>();
         ListView bloglistview = (ListView) view.findViewById(R.id.blog_listview);
         final BlogAdapter adapter = new BlogAdapter(getActivity(), R.layout.item_blog);
         try {
@@ -35,6 +39,7 @@ public class BlogFragment extends Fragment {
             for (String str : blogs) {
                 if (str.contains(".html") || str.contains(".htm")) {
                     adapter.add(str);
+                    mList.add(str);
                 }
             }
         } catch (IOException e) {
@@ -44,7 +49,7 @@ public class BlogFragment extends Fragment {
         bloglistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Utils.openAssetsDoc(getActivity(), adapter.getItem(i));
+                Utils.openAssetsDoc(getActivity(), mList.get(i));
             }
         });
         return view;

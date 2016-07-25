@@ -14,7 +14,7 @@ import cn.bingoogolapple.qrcode.core.BGAQRCodeUtil;
 import cn.bingoogolapple.qrcode.zxing.QRCodeDecoder;
 import cn.bingoogolapple.qrcode.zxing.QRCodeEncoder;
 
-public class GqrActivity extends BaseActivity {
+public class SolutionGqrActivity extends BaseActivity {
     private ImageView mChineseIv;
     private ImageView mEnglishIv;
     private ImageView mChineseLogoIv;
@@ -23,7 +23,7 @@ public class GqrActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gqr_scanner);
+        setContentView(R.layout.activity_solution_gqr_scanner);
         initView();
         initActionBar(true, getResources().getString(R.string.scan_gqr));
         createQRCode();
@@ -44,7 +44,7 @@ public class GqrActivity extends BaseActivity {
     }
 
     private void createChineseQRCode() {
-        QRCodeEncoder.encodeQRCode("安卓", BGAQRCodeUtil.dp2px(GqrActivity.this, 150), new QRCodeEncoder.Delegate() {
+        QRCodeEncoder.encodeQRCode("安卓", BGAQRCodeUtil.dp2px(SolutionGqrActivity.this, 150), new QRCodeEncoder.Delegate() {
             @Override
             public void onEncodeQRCodeSuccess(Bitmap bitmap) {
                 mChineseIv.setImageBitmap(bitmap);
@@ -52,13 +52,13 @@ public class GqrActivity extends BaseActivity {
 
             @Override
             public void onEncodeQRCodeFailure() {
-                Toast.makeText(GqrActivity.this, "生成中文二维码失败", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SolutionGqrActivity.this, "生成中文二维码失败", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void createEnglishQRCode() {
-        QRCodeEncoder.encodeQRCode("createEnglishQRCode", BGAQRCodeUtil.dp2px(GqrActivity.this, 150), Color.parseColor("#ff0000"), new QRCodeEncoder.Delegate() {
+        QRCodeEncoder.encodeQRCode("createEnglishQRCode", BGAQRCodeUtil.dp2px(SolutionGqrActivity.this, 150), Color.parseColor("#ff0000"), new QRCodeEncoder.Delegate() {
             @Override
             public void onEncodeQRCodeSuccess(Bitmap bitmap) {
                 mEnglishIv.setImageBitmap(bitmap);
@@ -66,13 +66,13 @@ public class GqrActivity extends BaseActivity {
 
             @Override
             public void onEncodeQRCodeFailure() {
-                Toast.makeText(GqrActivity.this, "生成英文二维码失败", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SolutionGqrActivity.this, "生成英文二维码失败", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void createChineseQRCodeWithLogo() {
-        QRCodeEncoder.encodeQRCode("安卓", BGAQRCodeUtil.dp2px(GqrActivity.this, 150), Color.parseColor("#795dbf"), BitmapFactory.decodeResource(GqrActivity.this.getResources(), R.drawable.user_avatar), new QRCodeEncoder.Delegate() {
+        QRCodeEncoder.encodeQRCode("安卓", BGAQRCodeUtil.dp2px(SolutionGqrActivity.this, 150), Color.parseColor("#795dbf"), BitmapFactory.decodeResource(SolutionGqrActivity.this.getResources(), R.drawable.user_avatar), new QRCodeEncoder.Delegate() {
             @Override
             public void onEncodeQRCodeSuccess(Bitmap bitmap) {
                 mChineseLogoIv.setImageBitmap(bitmap);
@@ -80,13 +80,13 @@ public class GqrActivity extends BaseActivity {
 
             @Override
             public void onEncodeQRCodeFailure() {
-                Toast.makeText(GqrActivity.this, "生成带logo的中文二维码失败", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SolutionGqrActivity.this, "生成带logo的中文二维码失败", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void createEnglishQRCodeWithLogo() {
-        QRCodeEncoder.encodeQRCode("createEnglishQRCodeWithLogo", BGAQRCodeUtil.dp2px(GqrActivity.this, 150), Color.parseColor("#0000ff"), BitmapFactory.decodeResource(GqrActivity.this.getResources(), R.drawable.user_avatar), new QRCodeEncoder.Delegate() {
+        QRCodeEncoder.encodeQRCode("createEnglishQRCodeWithLogo", BGAQRCodeUtil.dp2px(SolutionGqrActivity.this, 150), Color.parseColor("#0000ff"), BitmapFactory.decodeResource(SolutionGqrActivity.this.getResources(), R.drawable.user_avatar), new QRCodeEncoder.Delegate() {
             @Override
             public void onEncodeQRCodeSuccess(Bitmap bitmap) {
                 mEnglishLogoIv.setImageBitmap(bitmap);
@@ -94,7 +94,7 @@ public class GqrActivity extends BaseActivity {
 
             @Override
             public void onEncodeQRCodeFailure() {
-                Toast.makeText(GqrActivity.this, "生成带logo的英文二维码失败", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SolutionGqrActivity.this, "生成带logo的英文二维码失败", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -132,12 +132,12 @@ public class GqrActivity extends BaseActivity {
         QRCodeDecoder.decodeQRCode(bitmap, new QRCodeDecoder.Delegate() {
             @Override
             public void onDecodeQRCodeSuccess(String result) {
-                Toast.makeText(GqrActivity.this, result, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SolutionGqrActivity.this, result, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onDecodeQRCodeFailure() {
-                Toast.makeText(GqrActivity.this, errorTip, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SolutionGqrActivity.this, errorTip, Toast.LENGTH_SHORT).show();
             }
         });
     }

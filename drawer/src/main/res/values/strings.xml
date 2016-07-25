@@ -106,5 +106,5 @@
         <![CDATA[
         <font color=\'#28b5f5\'>Discover</font> and <font color=\'#28b5f5\'>play</font>games.
         ]]>
-    </string>
+    </string><string name="waveview">水波纹WaveView</string><string name="carddisplay">卡券效果</string>
 </resources>

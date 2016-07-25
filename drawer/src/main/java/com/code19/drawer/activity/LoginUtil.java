@@ -22,7 +22,7 @@ public class LoginUtil extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent = new Intent(this, LoginActivity.class);//跳转到登陆页面
+        Intent intent = new Intent(this, SolutionLoginActivity.class);//跳转到登陆页面
         startActivityForResult(intent, REQUSET_CODE_LOGIN);
     }
 

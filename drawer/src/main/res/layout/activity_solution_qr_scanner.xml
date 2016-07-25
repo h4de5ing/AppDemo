@@ -6,7 +6,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context="com.code19.drawer.activity.QrScannerActivity">
+	tools:context="com.code19.drawer.activity.SolutionQrScannerActivity">
     <cn.bingoogolapple.qrcode.zxing.ZXingView
 		android:id="@+id/zxingview"
 		style="@style/MatchMatch"
