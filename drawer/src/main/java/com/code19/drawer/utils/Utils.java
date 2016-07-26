@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.widget.Toast;
 
+import com.code19.drawer.R;
 import com.code19.drawer.activity.DocActivity;
 
 import java.io.File;
@@ -39,7 +40,7 @@ public class Utils {
 
     public static void crash2File(Context context, String msg) {
         String absolutePath = context.getExternalCacheDir().getAbsolutePath();
-        File file = new File(absolutePath+"/log_" + System.currentTimeMillis() + ".log");
+        File file = new File(absolutePath + "/log_" + System.currentTimeMillis() + ".log");
         FileOutputStream trace = null;
         try {
             trace = new FileOutputStream(file, true);
@@ -75,9 +76,21 @@ public class Utils {
         return compress;
     }
 
-    /**
-     * Created by Administrator on 2016/79.
-     */
+    public static void createShotCut(Context context, String name, int icon, Class<?> cls) {
+        Intent shottcutIntent = new Intent(Intent.ACTION_MAIN);
+        //加入action和category之后，卸载程序会删除快捷方式
+        shottcutIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        shottcutIntent.setClass(context, cls);
+        shottcutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Intent shortcut = new Intent(Intent.ACTION_CREATE_SHORTCUT);
+        shortcut.putExtra("duplicate", false);//不允许重复
+        shortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shottcutIntent);
+        shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, name);//名称
+        Intent.ShortcutIconResource.fromContext(context, R.drawable.user_avatar);//图标id
+        shortcut.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, icon);
+        shortcut.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+        context.sendBroadcast(shortcut);
+    }
 
     public static class Doc_Config {
         public static String WaverViewDocURL = "http://3lin9.19code.com/documents/WaveView.html";

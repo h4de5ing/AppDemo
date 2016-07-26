@@ -24,6 +24,7 @@
     <string name="scan_gqr">生成二维码</string>
     <string name="scan_wechat">微信扫描</string>
     <string name="scan_alipay">支付宝扫描</string>
+    <string name="create_shotcut">创建快捷方式</string>
     <string name="float_menu">悬浮菜单</string>
     <string name="search">搜索</string>
 	<!-- Example General settings -->

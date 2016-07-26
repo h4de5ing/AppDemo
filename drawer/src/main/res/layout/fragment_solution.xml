@@ -34,9 +34,15 @@
 			android:background="?android:attr/selectableItemBackground"
 			android:text="@string/scan_alipay"/>
 		<Button
-				android:id="@+id/sol_float_menu"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:background="?android:attr/selectableItemBackground"
-				android:text="@string/float_menu"/>
+			android:id="@+id/sol_create_shortcut"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?android:attr/selectableItemBackground"
+			android:text="@string/create_shotcut"/>
+		<Button
+			android:id="@+id/sol_float_menu"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?android:attr/selectableItemBackground"
+			android:text="@string/float_menu"/>
 </LinearLayout>

@@ -10,10 +10,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.code19.drawer.MainActivity;
 import com.code19.drawer.R;
 import com.code19.drawer.activity.SolutionGqrActivity;
 import com.code19.drawer.activity.SolutionLoginActivity;
 import com.code19.drawer.activity.SolutionQrScannerActivity;
+import com.code19.drawer.utils.Utils;
 
 
 /**
@@ -30,12 +32,14 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_solution, null);
+        Button solcreateshortcut = (Button) view.findViewById(R.id.sol_create_shortcut);
         Button solfloatmenu = (Button) view.findViewById(R.id.sol_float_menu);
         Button solgqrscan = (Button) view.findViewById(R.id.sol_gqr_scan);
         Button solqrscan = (Button) view.findViewById(R.id.sol_qr_scan);
         Button solalipayscan = (Button) view.findViewById(R.id.sol_alipay_scan);
         Button solwechatscan = (Button) view.findViewById(R.id.sol_wechat_scan);
         Button solchecklogin = (Button) view.findViewById(R.id.sol_check_login);
+        solcreateshortcut.setOnClickListener(this);
         solfloatmenu.setOnClickListener(this);
         solgqrscan.setOnClickListener(this);
         solqrscan.setOnClickListener(this);
@@ -62,6 +66,10 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
                 break;
             case R.id.sol_alipay_scan:
                 toAliPayScan();
+                break;
+            case R.id.sol_create_shortcut:
+                //SystemUtils.createDeskShortCut(getActivity(), "Test", R.drawable.user_avatar, MainActivity.class);
+                Utils.createShotCut(getActivity(), "Text", R.drawable.user_avatar, MainActivity.class);
                 break;
             case R.id.sol_float_menu:
                 break;
