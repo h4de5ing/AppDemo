@@ -5,8 +5,15 @@
 
 <a href="https://github.com/h4de5ing/AppDemo">代码</a>
 <a href="https://github.com/h4de5ing/AppDemo/wiki">笔记</a>
+## 扫描生成二维码
+## 退出应用的方法
+* 保存Activity实例在集合中,统一结束所有的Activity
+* 通过广播退出应用
+* 按2次返回按钮退出应用
+* 长按返回按钮
+* 通过退出按钮
 
-# 第三方开源框架
+## 第三方开源框架
 
 工具类库:[AndroidCommon](https://github.com/h4de5ing/AndroidCommon)
 

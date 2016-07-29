@@ -1,10 +1,14 @@
 package com.code19.drawer;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 
 import com.code19.drawer.utils.Utils;
+import com.code19.library.L;
+
 
 /**
  * Created by Administrator on 2016/7/12.
@@ -12,6 +16,46 @@ import com.code19.drawer.utils.Utils;
 
 public class App extends Application {
     private static Context mContext;
+
+    public App() {
+        //统一管理Activity生命周期
+        this.registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
+            @Override
+            public void onActivityCreated(Activity activity, Bundle bundle) {
+                L.i("onActivityCreated", activity.getLocalClassName());
+            }
+
+            @Override
+            public void onActivityStarted(Activity activity) {
+                L.i("onActivityStarted", activity.getLocalClassName());
+            }
+
+            @Override
+            public void onActivityResumed(Activity activity) {
+                L.i("onActivityResumed", activity.getLocalClassName());
+            }
+
+            @Override
+            public void onActivityPaused(Activity activity) {
+                L.i("onActivityPaused", activity.getLocalClassName());
+            }
+
+            @Override
+            public void onActivityStopped(Activity activity) {
+                L.i("onActivityStopped", activity.getLocalClassName());
+            }
+
+            @Override
+            public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+                L.i("onActivitySaveInstanceState", activity.getLocalClassName());
+            }
+
+            @Override
+            public void onActivityDestroyed(Activity activity) {
+                L.i("onActivityDestroyed", activity.getLocalClassName());
+            }
+        });
+    }
 
     @Override
     public void onCreate() {
@@ -24,6 +68,12 @@ public class App extends Application {
         return mContext;
     }
 
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        System.gc();
+    }
+
     private class MyUnCaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
         @Override
         public void uncaughtException(Thread thread, Throwable throwable) {
@@ -33,7 +83,7 @@ public class App extends Application {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             App.this.startActivity(intent);
             android.os.Process.killProcess(android.os.Process.myPid());
-            System.exit(1);
+            System.exit(1);//非0数表示非正常退出 0正常退出
         }
     }
 }

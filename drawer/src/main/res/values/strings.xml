@@ -98,14 +98,23 @@
     <string name="nav_solution">解决方案</string>
     <string name="nav_blog">博客</string>
     <string name="nav_opensource">开源框架</string>
-    <string name="nav_openproject">完整项目</string>
+    <string name="nav_exitapp">退出应用</string>
     <string name="nav_materialdesign">MaterialDesign</string>
     <string name="nav_github">Github</string>
     <string name="recyclerview">RecyclerView</string>
-        <string name="resume">简历</string>
+    <string name="resume">简历</string>
+    <!--代码高亮-->
     <string name="light_format" formatted="false">
         <![CDATA[
         <font color=\'#28b5f5\'>Discover</font> and <font color=\'#28b5f5\'>play</font>games.
         ]]>
-    </string><string name="waveview">水波纹WaveView</string><string name="carddisplay">卡券效果</string>
+    </string><string name="waveview">水波纹WaveView</string>
+    <string name="carddisplay">卡券效果</string>
+    <!--复数表达形式-->
+    <plurals name="time">
+        <item quantity="zero">0</item>
+        <item quantity="one">1</item>
+        <item quantity="few">Few</item>
+        <item quantity="many">Many</item>
+    </plurals>
 </resources>

@@ -94,5 +94,6 @@ public class Utils {
 
     public static class Doc_Config {
         public static String WaverViewDocURL = "http://3lin9.19code.com/documents/WaveView.html";
+        public static String OpenSourceURL = "http://3lin9.19code.com/os.txt";
     }
 }

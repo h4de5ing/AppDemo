@@ -1,1 +1,1 @@
-include ':app', ':drawer', ':libary', ':sharesdklibrary', ':badge'
+include ':app', ':drawer', ':libary', ':sharesdklibrary'

@@ -1,6 +1,6 @@
 package com.code19.drawer;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,9 +10,11 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.code19.drawer.activity.BaseActivity;
 import com.code19.drawer.activity.SearchActivity;
@@ -23,6 +25,7 @@ import com.code19.drawer.utils.Utils;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private long exitTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +64,23 @@ public class MainActivity extends BaseActivity
         }
     }
 
+    //按2次返回键退出应用
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            //2秒之内按返回键就会退出应用
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
+                Toast.makeText(this, "再按一次退出应用", Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            } else {
+                finish();
+                System.exit(0);//正常退出应用
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -76,6 +96,7 @@ public class MainActivity extends BaseActivity
                 break;
             case R.id.action_settings:
                 startActivity(new Intent(this, SettingsActivity.class));
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
                 break;
             case R.id.action_opensource:
                 Utils.openAssetsDoc(this, "other/OpenSource.html");
@@ -107,10 +128,10 @@ public class MainActivity extends BaseActivity
                 title = getString(R.string.nav_blog);
                 break;
             case R.id.nav_opensource:
-                title = getString(R.string.nav_opensource);
+                Utils.openURLDoc(this, Utils.Doc_Config.OpenSourceURL);
                 break;
-            case R.id.nav_openproject:
-                title = getString(R.string.nav_openproject);
+            case R.id.nav_exitapp:
+                System.exit(0);
                 break;
         }
         getSupportActionBar().setTitle(title);
@@ -120,8 +141,8 @@ public class MainActivity extends BaseActivity
         return true;
     }
 
-    public static void navigateToSearch(Activity context) {
-        final Intent intent = new Intent(context, SearchActivity.class);
+    public static void navigateToSearch(Context context) {
+        Intent intent = new Intent(context, SearchActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         intent.setAction("navigate_search");
         context.startActivity(intent);

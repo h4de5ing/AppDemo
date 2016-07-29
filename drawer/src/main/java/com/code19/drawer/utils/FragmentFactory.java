@@ -39,7 +39,7 @@ public class FragmentFactory {
             case R.id.nav_opensource:
                 fragment=new OpenSourceFragment();
                 break;
-            case R.id.nav_openproject:
+            case R.id.nav_exitapp:
                 fragment=new OpenProjectFragment();
                 break;
             default:

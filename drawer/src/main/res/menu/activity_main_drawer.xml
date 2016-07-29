@@ -18,19 +18,14 @@
 			android:id="@+id/nav_blog"
 			android:icon="@drawable/ic_menu_manage"
 			android:title="@string/nav_blog"/>
+		<item
+			android:id="@+id/nav_opensource"
+			android:icon="@drawable/ic_menu_share"
+			android:title="@string/nav_opensource"/>
+        <item
+			android:id="@+id/nav_exitapp"
+			android:icon="@drawable/ic_menu_send"
+			android:title="@string/nav_exitapp"/>
     </group>
-
-    <item android:title="@string/nav_github">
-        <menu>
-            <item
-				android:id="@+id/nav_opensource"
-				android:icon="@drawable/ic_menu_share"
-				android:title="@string/nav_opensource"/>
-            <item
-				android:id="@+id/nav_openproject"
-				android:icon="@drawable/ic_menu_send"
-				android:title="@string/nav_openproject"/>
-        </menu>
-    </item>
 
 </menu>

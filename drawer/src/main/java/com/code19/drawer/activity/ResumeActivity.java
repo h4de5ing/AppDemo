@@ -6,7 +6,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -29,7 +28,6 @@ public class ResumeActivity extends BaseActivity {
         setContentView(R.layout.activity_resume);
         initActionBar(true, "我的简历");
         initDialog();
-        ConstraintLayout activityresume = (ConstraintLayout) findViewById(R.id.activity_resume);
         mResume = (ImageView) findViewById(R.id.resume);
         QRCodeEncoder.encodeQRCode("http://19code.com/android.html", BGAQRCodeUtil.dp2px(ResumeActivity.this, 300), Color.parseColor("#0000ff"), BitmapFactory.decodeResource(ResumeActivity.this.getResources(), R.drawable.user_avatar), new QRCodeEncoder.Delegate() {
             @Override
