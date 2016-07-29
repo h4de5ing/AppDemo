@@ -1,10 +1,9 @@
 package com.code19.drawer.utils;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.widget.Toast;
 
 import com.code19.drawer.R;
 import com.code19.drawer.activity.DocActivity;
@@ -26,16 +25,24 @@ public class Utils {
         Intent intent = new Intent(context, DocActivity.class);
         intent.putExtra(DocActivity.DOCURL, url);
         context.startActivity(intent);
+        ((Activity) context).overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
     }
 
     public static void openAssetsDoc(Context context, String url) {
-        try {
-            Intent intent = new Intent(context, DocActivity.class);
-            intent.putExtra(DocActivity.DOCURL, "file:///android_asset/blog/" + url);
-            context.startActivity(intent);
-        } catch (Exception e) {
-            Toast.makeText(context, "文件没找到", Toast.LENGTH_SHORT).show();
-        }
+        Intent intent = new Intent(context, DocActivity.class);
+        intent.putExtra(DocActivity.DOCURL, "file:///android_asset/blog/" + url);
+        context.startActivity(intent);
+        ((Activity) context).overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
+    }
+
+    //Activity 从右边往左滑动
+    public static void right2left(Context context) {
+        ((Activity) context).overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
+    }
+
+    //Activity 从左边往右滑动
+    public static void left2right(Context context) {
+        ((Activity) context).overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
     }
 
     public static void crash2File(Context context, String msg) {
@@ -54,26 +61,6 @@ public class Utils {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static boolean saveImg(Bitmap bitmap, String filename) {
-        boolean compress = false;
-        File file = new File("/sdcard/", filename);
-        if (file.exists()) {
-            file.delete();
-        }
-        try {
-            FileOutputStream outputStream = new FileOutputStream(file);
-            compress = bitmap.compress(Bitmap.CompressFormat.PNG, 90, outputStream);
-            outputStream.flush();
-            outputStream.close();
-            compress = true;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return compress;
     }
 
     public static void createShotCut(Context context, String name, int icon, Class<?> cls) {

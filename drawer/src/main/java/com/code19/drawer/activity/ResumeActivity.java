@@ -11,7 +11,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.code19.drawer.R;
-import com.code19.drawer.utils.Utils;
+import com.code19.library.ImageUtils;
+
+import java.io.File;
 
 import cn.bingoogolapple.qrcode.core.BGAQRCodeUtil;
 import cn.bingoogolapple.qrcode.zxing.QRCodeEncoder;
@@ -57,8 +59,7 @@ public class ResumeActivity extends BaseActivity {
         mDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Utils.saveImg(mBitmap, "resume.png");
-
+                ImageUtils.bitmap2File(mBitmap, new File("/sdcard/resume.jpg"));
             }
         });
         mDialog.setNegativeButton("取消", null);

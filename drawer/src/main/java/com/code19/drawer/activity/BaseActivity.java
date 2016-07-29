@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.code19.drawer.utils.Utils;
 import com.code19.library.SystemUtils;
 
 public class BaseActivity extends AppCompatActivity {
@@ -13,6 +14,7 @@ public class BaseActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
+                Utils.right2left(this);
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -96,7 +96,7 @@ public class MainActivity extends BaseActivity
                 break;
             case R.id.action_settings:
                 startActivity(new Intent(this, SettingsActivity.class));
-                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
+                Utils.left2right(this);
                 break;
             case R.id.action_opensource:
                 Utils.openAssetsDoc(this, "other/OpenSource.html");
