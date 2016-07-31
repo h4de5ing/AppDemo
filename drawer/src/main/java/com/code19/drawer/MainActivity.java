@@ -74,10 +74,16 @@ public class MainActivity extends BaseActivity
                 exitTime = System.currentTimeMillis();
             } else {
                 finish();
-                System.exit(0);//正常退出应用
+                //System.exit(0);//正常退出应用
             }
             return true;
-        }
+        } /*else if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            //长按返回键
+            Toast.makeText(this, "长按返回键", Toast.LENGTH_SHORT).show();
+        } else if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 2) {
+            //event.getRepeatCount() 为0时代表单击了一次，当次数>=1时就代表长按了,值越大，说明按的时间越长。
+            //System.exit(0);
+        }*/
         return super.onKeyDown(keyCode, event);
     }
 
@@ -131,7 +137,7 @@ public class MainActivity extends BaseActivity
                 Utils.openURLDoc(this, Utils.Doc_Config.OpenSourceURL);
                 break;
             case R.id.nav_exitapp:
-                System.exit(0);
+                finish();
                 break;
         }
         getSupportActionBar().setTitle(title);

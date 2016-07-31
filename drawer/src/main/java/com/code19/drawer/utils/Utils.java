@@ -2,6 +2,7 @@ package com.code19.drawer.utils;
 
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 
@@ -77,6 +78,20 @@ public class Utils {
         shortcut.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, icon);
         shortcut.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
         context.sendBroadcast(shortcut);
+    }
+
+    //获取当前进程名字
+    public static String getProcessName(Context appContext) {
+        String currentProcessName = null;
+        int pid = android.os.Process.myPid();
+        ActivityManager manager = (ActivityManager) appContext.getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningAppProcessInfo processInfo : manager.getRunningAppProcesses()) {
+            if (processInfo.pid == pid) {
+                currentProcessName = processInfo.processName;
+                break;
+            }
+        }
+        return currentProcessName;
     }
 
     public static class Doc_Config {

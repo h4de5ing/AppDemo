@@ -12,7 +12,13 @@
 * 按2次返回按钮退出应用
 * 长按返回按钮
 * 通过退出按钮
-
+```
+进程是由os底层管理,所以少调用System.exit(0)和android.os.Process.killProcess(android.os.Process.myPid());
+finish()：结束当前Activity，不会立即释放内存。遵循android内存管理机制。
+exit()：结束当前组件如Activity，并立即释放当前Activity所占资源。
+killProcess()：结束当前组件如Activity，并立即释放当前Activity所占资源。
+restartPackage()：结束整个App，包括service等其它Activity组件。
+```
 ## 第三方开源框架
 
 工具类库:[AndroidCommon](https://github.com/h4de5ing/AndroidCommon)
