@@ -1,14 +1,12 @@
 package com.code19.drawer.fragment;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.code19.drawer.MainActivity;
 import com.code19.drawer.R;
@@ -16,6 +14,7 @@ import com.code19.drawer.activity.SolutionGqrActivity;
 import com.code19.drawer.activity.SolutionLoginActivity;
 import com.code19.drawer.activity.SolutionQrScannerActivity;
 import com.code19.drawer.utils.Utils;
+import com.code19.library.SystemUtils;
 
 
 /**
@@ -32,6 +31,7 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_solution, null);
+        Button solalipaypaycode = (Button) view.findViewById(R.id.sol_alipay_paycode);
         Button solcreateshortcut = (Button) view.findViewById(R.id.sol_create_shortcut);
         Button solfloatmenu = (Button) view.findViewById(R.id.sol_float_menu);
         Button solgqrscan = (Button) view.findViewById(R.id.sol_gqr_scan);
@@ -43,6 +43,7 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
         solfloatmenu.setOnClickListener(this);
         solgqrscan.setOnClickListener(this);
         solqrscan.setOnClickListener(this);
+        solalipaypaycode.setOnClickListener(this);
         solalipayscan.setOnClickListener(this);
         solwechatscan.setOnClickListener(this);
         solchecklogin.setOnClickListener(this);
@@ -62,10 +63,13 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
                 this.startActivity(new Intent(getActivity(), SolutionGqrActivity.class));
                 break;
             case R.id.sol_wechat_scan:
-                toWeChatScan();
+                SystemUtils.toWeChatScan(getActivity());
                 break;
             case R.id.sol_alipay_scan:
-                toAliPayScan();
+                SystemUtils.toAliPayScan(getActivity());
+                break;
+            case R.id.sol_alipay_paycode:
+                SystemUtils.toAliPayPayCode(getActivity());
                 break;
             case R.id.sol_create_shortcut:
                 //SystemUtils.createDeskShortCut(getActivity(), "Test", R.drawable.user_avatar, MainActivity.class);
@@ -73,26 +77,6 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
                 break;
             case R.id.sol_float_menu:
                 break;
-        }
-    }
-
-    private void toWeChatScan() {
-        try {
-            Uri uri = Uri.parse("weixin://dl/scan");
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
-        } catch (Exception e) {
-            Toast.makeText(getActivity(), "无法跳转到微信，请检查您是否安装了微信！", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void toAliPayScan() {
-        try {
-            Uri uri = Uri.parse("alipayqr://platformapi/startapp?saId=10000007");
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
-        } catch (Exception e) {
-            Toast.makeText(getActivity(), "无法跳转到支付宝，请检查您是否安装了支付宝！", Toast.LENGTH_SHORT).show();
         }
     }
 }

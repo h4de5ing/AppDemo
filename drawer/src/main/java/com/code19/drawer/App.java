@@ -6,8 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.code19.drawer.utils.Utils;
 import com.code19.library.L;
+
 
 
 /**
@@ -77,8 +77,8 @@ public class App extends Application {
     private class MyUnCaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
         @Override
         public void uncaughtException(Thread thread, Throwable throwable) {
-            throwable.printStackTrace();
-            Utils.crash2File(App.this, throwable.getMessage());
+            L.crash2File(App.this,throwable);
+            L.i(thread.getName(), thread.getContextClassLoader());
             Intent intent = new Intent(App.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             App.this.startActivity(intent);

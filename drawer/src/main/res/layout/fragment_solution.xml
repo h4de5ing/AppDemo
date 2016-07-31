@@ -34,6 +34,12 @@
 			android:background="?android:attr/selectableItemBackground"
 			android:text="@string/scan_alipay"/>
 		<Button
+			android:id="@+id/sol_alipay_paycode"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?android:attr/selectableItemBackground"
+			android:text="@string/scan_alipay_paycode"/>
+		<Button
 			android:id="@+id/sol_create_shortcut"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
