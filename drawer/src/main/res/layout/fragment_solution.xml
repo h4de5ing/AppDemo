@@ -46,6 +46,12 @@
 			android:background="?android:attr/selectableItemBackground"
 			android:text="@string/create_shotcut"/>
 		<Button
+			android:id="@+id/sol_onekey_lockscreen"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="?android:attr/selectableItemBackground"
+			android:text="@string/onekeylockscreen"/>
+		<Button
 			android:id="@+id/sol_float_menu"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"

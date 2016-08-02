@@ -1,4 +1,4 @@
-package com.code19.badge;
+package com.code19.sharesdklibrary;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -24,6 +24,6 @@ public class ExampleInstrumentationTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.code19.badge", appContext.getPackageName());
+        assertEquals("com.code19.sharesdklibrary.test", appContext.getPackageName());
     }
 }

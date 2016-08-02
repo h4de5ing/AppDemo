@@ -111,7 +111,8 @@
         ]]>
     </string><string name="waveview">水波纹WaveView</string>
     <string name="carddisplay">卡券效果</string>
-	<!--复数表达形式-->
+    <string name="onekeylockscreen">一键锁屏</string>
+    <!--复数表达形式-->
 	<plurals name="time">
         <item quantity="zero">0</item>
         <item quantity="one">1</item>

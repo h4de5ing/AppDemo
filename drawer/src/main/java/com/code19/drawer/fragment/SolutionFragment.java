@@ -31,6 +31,7 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_solution, null);
+        Button solonekeylockscreen = (Button) view.findViewById(R.id.sol_onekey_lockscreen);
         Button solalipaypaycode = (Button) view.findViewById(R.id.sol_alipay_paycode);
         Button solcreateshortcut = (Button) view.findViewById(R.id.sol_create_shortcut);
         Button solfloatmenu = (Button) view.findViewById(R.id.sol_float_menu);
@@ -47,6 +48,7 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
         solalipayscan.setOnClickListener(this);
         solwechatscan.setOnClickListener(this);
         solchecklogin.setOnClickListener(this);
+        solonekeylockscreen.setOnClickListener(this);
         return view;
     }
 
@@ -72,8 +74,9 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
                 SystemUtils.toAliPayPayCode(getActivity());
                 break;
             case R.id.sol_create_shortcut:
-                //SystemUtils.createDeskShortCut(getActivity(), "Test", R.drawable.user_avatar, MainActivity.class);
                 Utils.createShotCut(getActivity(), "Text", R.drawable.user_avatar, MainActivity.class);
+                break;
+            case R.id.sol_onekey_lockscreen:
                 break;
             case R.id.sol_float_menu:
                 break;

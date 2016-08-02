@@ -1,4 +1,4 @@
-package com.code19.badge;
+package com.code19.sharesdklibrary;
 
 import org.junit.Test;
 
