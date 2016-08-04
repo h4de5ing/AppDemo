@@ -9,7 +9,6 @@ import android.os.Bundle;
 import com.code19.library.L;
 
 
-
 /**
  * Created by Administrator on 2016/7/12.
  */
@@ -74,10 +73,13 @@ public class App extends Application {
         System.gc();
     }
 
+    /**
+     * 捕获未捕获的异常，如果发生异常，将异常信息写入到文件中并重启应用
+     */
     private class MyUnCaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
         @Override
         public void uncaughtException(Thread thread, Throwable throwable) {
-            L.crash2File(App.this,throwable);
+            L.crash2File(App.this, throwable);
             Intent intent = new Intent(App.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             App.this.startActivity(intent);

@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 
 /**
  * Created by Administrator on 2016/7/25.
+ * 自定义控件-优惠券
  */
 
 public class CouponDisplayView extends LinearLayout {

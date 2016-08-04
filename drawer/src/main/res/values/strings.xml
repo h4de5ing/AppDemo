@@ -119,4 +119,7 @@
         <item quantity="few">Few</item>
         <item quantity="many">Many</item>
     </plurals>
+
+    <!-- TODO: Remove or change this placeholder text -->
+	<string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

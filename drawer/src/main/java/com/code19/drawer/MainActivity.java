@@ -64,7 +64,14 @@ public class MainActivity extends BaseActivity
         }
     }
 
-    //按2次返回键退出应用
+    /**
+     * 如何退出应用程序
+     * 进程是由os底层管理,所以少调用System.exit(0)和android.os.Process.killProcess(android.os.Process.myPid());
+     * finish()：结束当前Activity，不会立即释放内存。遵循android内存管理机制。
+     * exit()：结束当前组件如Activity，并立即释放当前Activity所占资源。
+     * killProcess()：结束当前组件如Activity，并立即释放当前Activity所占资源。
+     * restartPackage()：结束整个App，包括service等其它Activity组件。
+     */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {

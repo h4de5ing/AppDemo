@@ -20,12 +20,18 @@ public class BaseActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * 设置ActionBar的home和标题
+     */
     public void initActionBar(boolean homeButtonEnable, String title) {
         getSupportActionBar().setHomeButtonEnabled(homeButtonEnable);
         getSupportActionBar().setDisplayHomeAsUpEnabled(homeButtonEnable);
         getSupportActionBar().setTitle(title);
     }
 
+    /**
+     * 如果应用程序的页面变成不可见状态，app就可能进入后台状态
+     */
     @Override
     protected void onStop() {
         super.onStop();
