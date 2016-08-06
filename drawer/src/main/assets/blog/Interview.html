@@ -18,6 +18,38 @@
   ContentProvider
   RemoteViews
   ```
+   - 多线程
+   Activit.runOnUiThread(Runnable)
+   View.post(Runnable) View.postDelay(Runnable,long)
+   Handler
+   AsyncTask
+
+   - 内存泄漏
+   * 资源对象没有关闭造成
+   * 构造Adapter时，没有缓存ConvertView
+   * Bitmap对象不在使用时调用recycle()释放内存
+   * 没有取消注册造成的内存泄漏
+   * 静态方法持有Context
+   * 集合中对象没有清理
+   - OOM
+   * 使用更加轻量的数据结构
+   * Android里面少使用Enum
+   * Bitmap对象的内存占用
+   * 更大的图片
+   * onDraw方法里面执行对象的创建
+   * StringBuilder
+
+   - ANR
+   * 主线程IO操作(4.0以后不允许)
+   * 主线程中耗时操作
+   * 主线程中错误的操作，Thread.wait Thread.sleep
+   * 5秒内未响应输入事件
+   * 10秒内未处理完BroadcastReceiver
+   * 20秒内未处理完Service
+   * AsyncTask 处理耗时IO操作
+   * 使用Thread或者HandlerThread是设置优先级，默认优先级和主线程相同
+   * Activity中onCreate和onResume方法中耗时操作
+   * BrodcastReceiver中onReceive少用耗时操作，使用IntentServie
 
   - 搜索引擎小知识
   ```

@@ -7,8 +7,6 @@ import com.code19.drawer.R;
 import com.code19.drawer.fragment.BlogFragment;
 import com.code19.drawer.fragment.CustomViewFragment;
 import com.code19.drawer.fragment.MaterialFragment;
-import com.code19.drawer.fragment.OpenProjectFragment;
-import com.code19.drawer.fragment.OpenSourceFragment;
 import com.code19.drawer.fragment.SolutionFragment;
 
 /**
@@ -35,12 +33,6 @@ public class FragmentFactory {
                 break;
             case R.id.nav_blog:
                 fragment=new BlogFragment();
-                break;
-            case R.id.nav_opensource:
-                fragment=new OpenSourceFragment();
-                break;
-            case R.id.nav_exitapp:
-                fragment=new OpenProjectFragment();
                 break;
             default:
                 fragment=new CustomViewFragment();
