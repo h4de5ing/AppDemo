@@ -4,12 +4,20 @@ package com.code19.drawer.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.DisplayMetrics;
+import android.util.MonthDisplayHelper;
+import android.util.StringBuilderPrinter;
+import android.util.TimeUtils;
+import android.util.TimingLogger;
 
 import com.code19.drawer.R;
 import com.code19.drawer.activity.DocActivity;
 
+import java.util.TimeZone;
+
 /**
  * Created by Administrator on 2016/7/11.
+ * 分析使用Android.utils中的类
  */
 
 public class Utils {
@@ -59,4 +67,87 @@ public class Utils {
         public static String WaverViewDocURL = "http://3lin9.19code.com/documents/WaveView.html";
         public static String OpenSourceURL = "http://3lin9.19code.com/os.txt";
     }
+
+    /**
+     * 分析android.utils包中的类
+     */
+    //屏幕相关
+    public void DisplayMetrics(Context context) {
+        //DisplayMetrics metrics = new DisplayMetrics();
+        //getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        float density = metrics.density; //逻辑分辨率 1.0 2.0 3.0 density=dpi/160
+        float scaledDensity = metrics.scaledDensity; //同上
+        int densityDpi = metrics.densityDpi;  //dpi  480
+        int heightPixels = metrics.heightPixels;//屏幕高 1080
+        int widthPixels = metrics.widthPixels; //屏幕宽1776 (1920)
+        float xdpi = metrics.xdpi; //准确的物理像素  442.451
+        float ydpi = metrics.ydpi; // 443.345
+        String s = metrics.toString();
+        L.i(densityDpi + "", s);
+    }
+
+    //TODO 缓存相关
+    public void LruCache() {
+    }
+
+    //6行日历网格格式一个月出现的问题
+    public void MonthDisplayHelper() {
+        MonthDisplayHelper helper = new MonthDisplayHelper(2016, 8);
+        //MonthDisplayHelper helper = new MonthDisplayHelper(2016, 8，Calendar.MONDAY);//第三个参数表是一周从那一天开始MONDAY，SUNDAY
+        int columnOf = helper.getColumnOf(1); //第一列
+        int dayAt = helper.getDayAt(1, 2);//第1行第2列是那一天
+        int[] digitsForRow = helper.getDigitsForRow(1);
+        int month = helper.getMonth();
+        int numberOfDaysInMonth = helper.getNumberOfDaysInMonth();
+        int offset = helper.getOffset();
+        int rowOf = helper.getRowOf(1);
+        int weekStartDay = helper.getWeekStartDay();
+        int year = helper.getYear();
+        boolean withinCurrentMonth = helper.isWithinCurrentMonth(1, 2);
+        //helper.nextMonth(); //下一月
+        //helper.previousMonth(); //上一月
+    }
+
+    // 键值对容器
+    public void Pair() {
+        //Pair pair = new Pair("aa", "bbb");
+        //Object first = pair.first;
+        //Object second = pair.second;
+        //boolean a = pair.equals("a");
+        //int i = pair.hashCode();
+    }
+
+    public void Property() {
+    }
+
+    public void StringBBuilderPrinter() {
+        StringBuilderPrinter printer = new StringBuilderPrinter(new StringBuilder());
+        printer.println("admin");
+    }
+
+    //时区工具类
+    public void TimeUtils() {
+        TimeZone timeZone = TimeUtils.getTimeZone(1, true, System.currentTimeMillis(), "cn");
+        TimeUtils.getTimeZoneDatabaseVersion();
+    }
+
+    //记录方法调用时间的工具类
+    public void TimingLogger() {
+        TimingLogger logger = new TimingLogger("TAG", "");
+        //方法A
+        logger.addSplit("方法A");
+        //方法B
+        logger.addSplit("方法");
+        logger.dumpToLog();
+
+        logger.reset();
+        logger.reset("newTAG", "newLable");
+    }
+
+    //动态容器,存放Resource中的值
+    public void TypedValue() {
+
+    }
+
 }

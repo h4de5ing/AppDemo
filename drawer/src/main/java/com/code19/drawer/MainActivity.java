@@ -25,6 +25,7 @@ import com.code19.drawer.utils.Utils;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = "MainActivity";
     private long exitTime = 0;
 
     @Override

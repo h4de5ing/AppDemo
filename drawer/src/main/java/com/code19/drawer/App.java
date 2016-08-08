@@ -21,37 +21,37 @@ public class App extends Application {
         this.registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(Activity activity, Bundle bundle) {
-                L.i("onActivityCreated", activity.getLocalClassName());
+                //L.i("onActivityCreated", activity.getLocalClassName());
             }
 
             @Override
             public void onActivityStarted(Activity activity) {
-                L.i("onActivityStarted", activity.getLocalClassName());
+                //L.i("onActivityStarted", activity.getLocalClassName());
             }
 
             @Override
             public void onActivityResumed(Activity activity) {
-                L.i("onActivityResumed", activity.getLocalClassName());
+                //L.i("onActivityResumed", activity.getLocalClassName());
             }
 
             @Override
             public void onActivityPaused(Activity activity) {
-                L.i("onActivityPaused", activity.getLocalClassName());
+                //L.i("onActivityPaused", activity.getLocalClassName());
             }
 
             @Override
             public void onActivityStopped(Activity activity) {
-                L.i("onActivityStopped", activity.getLocalClassName());
+                //L.i("onActivityStopped", activity.getLocalClassName());
             }
 
             @Override
             public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
-                L.i("onActivitySaveInstanceState", activity.getLocalClassName());
+                //L.i("onActivitySaveInstanceState", activity.getLocalClassName());
             }
 
             @Override
             public void onActivityDestroyed(Activity activity) {
-                L.i("onActivityDestroyed", activity.getLocalClassName());
+                //L.i("onActivityDestroyed", activity.getLocalClassName());
             }
         });
     }
