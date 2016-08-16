@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/drawer/drawer.iml" filepath="$PROJECT_DIR$/drawer/drawer.iml" />
       <module fileurl="file://$PROJECT_DIR$/libary/libary.iml" filepath="$PROJECT_DIR$/libary/libary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m/m.iml" filepath="$PROJECT_DIR$/m/m.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharesdklibrary/sharesdklibrary.iml" filepath="$PROJECT_DIR$/sharesdklibrary/sharesdklibrary.iml" />
     </modules>
   </component>

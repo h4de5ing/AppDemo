@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">M权限</string>
+    <string name="setting">设置</string>
+    <string name="cancel">取消</string>
+    <string name="opensource">开源框架实现M动态授权</string>
+    <string name="andoridres">安卓原生权限配置</string>
+</resources>
