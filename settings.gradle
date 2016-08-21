@@ -1,1 +1,1 @@
-include ':app', ':drawer', ':libary', ':sharesdklibrary', ':m'
+include ':drawer', ':libary', ':sharesdklibrary', ':m', ':spinner'
