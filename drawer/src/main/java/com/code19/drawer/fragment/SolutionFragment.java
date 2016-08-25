@@ -1,6 +1,7 @@
 package com.code19.drawer.fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -77,9 +78,31 @@ public class SolutionFragment extends android.support.v4.app.Fragment implements
                 Utils.createShotCut(getActivity(), "Text", R.drawable.user_avatar, MainActivity.class);
                 break;
             case R.id.sol_onekey_lockscreen:
+                downloadUrl();
                 break;
             case R.id.sol_float_menu:
                 break;
         }
+    }
+
+    /**
+     * 1 通过浏览器下载
+     */
+    private void downloadUrl() {
+        String url = "http://3lin9.19code.com/app.apk";
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.VIEW");
+        Uri content_url = Uri.parse(url);
+        intent.setData(content_url);
+        startActivity(intent);
+    }
+
+    /**
+     * 2 后台静默下载
+     * TODO 3 服务下载  4 下载管理器下载 5 应用市场下载
+     */
+    private void downloadInBack() {
+        String url = "http://3lin9.19code.com/app.apk";
+
     }
 }
