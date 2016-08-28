@@ -7,3 +7,10 @@
 /build
 /captures
 /.idea
+/app/src/androidTest
+/drawer/src/androidTest
+/m/src/androidTest
+/sharesdklibrary/src/androidTest
+/spinner/src/androidTest
+/stickylistview/src/androidTest
+/updialog/src/androidTest

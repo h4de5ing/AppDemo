@@ -1,4 +1,4 @@
-package com.code19.libary;
+package com.code19.stickylistview;
 
 import org.junit.Test;
 

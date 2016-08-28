@@ -18,3 +18,10 @@
 二维码:[BGAQRCode-Android](https://github.com/bingoogolapple/BGAQRCode-Android)
 
 圆形图片:[CircleImageView](https://github.com/hdodenhof/CircleImageView)
+
+# Moudle 各种示例demo
+* drawer 侧滑
+* m Android 6.0 权限问题
+* spinner  通过PopupWindow自定义Spinner效果
+* stickylistview  ListView RecyclerView 头部悬浮效果
+* updialog 自定义Dialog
