@@ -1,9 +1,12 @@
 package com.code19.spinner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -58,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void open_all_car() {
        /* mAllCarPopupWindow = new AllCarPopupWindow(LayoutInflater.from(this).inflate(R.layout.all_car, null), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, true);
-        mAllCarPopupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+        mAllCarPopupWindow.setOnDismissListener(new PopupUtils.OnDismissListener() {
             @Override
             public void onDismiss() {
             }
@@ -111,4 +114,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_pop:
+                startActivity(new Intent(this, PopupActivity.class));
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

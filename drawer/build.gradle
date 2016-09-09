@@ -30,10 +30,8 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile files('libs/jsoup-1.8.1.jar')
-    compile project(':libary')
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.android.support:design:24.0.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha3'
     compile 'com.android.support:cardview-v7:24.0.0'
     compile 'com.code19.library:library:0.1.0'
     compile 'com.google.zxing:core:3.2.1'
