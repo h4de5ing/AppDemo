@@ -1,1 +1,1 @@
-include ':drawer', ':sharesdklibrary', ':m', ':spinner', ':updialog', ':view'
+include ':drawer', ':sharesdklibrary', ':m', ':spinner', ':updialog', ':view', ':gallerydemo'
