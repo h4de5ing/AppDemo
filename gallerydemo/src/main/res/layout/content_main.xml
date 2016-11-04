@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <CheckBox
+        android:id="@+id/cb_show_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="显示相机(Show Camera)"/>
+
+
+    <CheckBox
+        android:id="@+id/cb_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="启动预览(Preview)"
+        />
+
+    <CheckBox
+        android:id="@+id/cb_no_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭(动画 Animation)"
+        />
+
+    <Button
+        android:id="@+id/btn_open_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Gallery"
+        android:textAllCaps="false"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="返回结果(Results)"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        />
+
+    <cn.finalteam.galleryfinal.widget.HorizontalListView
+        android:id="@+id/lv_photo"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:clipToPadding="false"
+        android:fadingEdge="none"
+        android:horizontalSpacing="2dp"
+        android:numColumns="3"
+        android:verticalSpacing="2dp"
+        />
+</LinearLayout>
