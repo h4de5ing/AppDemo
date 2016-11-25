@@ -64,6 +64,5 @@
         android:fadingEdge="none"
         android:horizontalSpacing="2dp"
         android:numColumns="3"
-        android:verticalSpacing="2dp"
-        />
+        android:verticalSpacing="2dp"/>
 </LinearLayout>

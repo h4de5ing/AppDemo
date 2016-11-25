@@ -11,12 +11,14 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="选择框"/>
+        android:text="选择框"
+        android:visibility="gone"/>
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:visibility="gone">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -32,19 +34,22 @@
     <android.support.v7.widget.SwitchCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="开关 "/>
+        android:text="开关 "
+        android:visibility="gone"/>
 
     <android.support.v4.widget.ContentLoadingProgressBar
         android:id="@+id/pro_progress"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:progress="50"/>
+        android:progress="50"
+        android:visibility="gone"/>
 
     <android.support.v7.widget.AppCompatSeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/btn_test"
@@ -57,14 +62,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <RadioButton
+            android:id="@+id/rb_get"
             style="@style/radiobutton"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:button="@null"
-            android:text="全部"/>
+            android:text="获取信息"/>
 
         <RadioButton
             style="@style/radiobutton"
@@ -82,4 +89,20 @@
             android:button="@null"
             android:text="现货"/>
     </RadioGroup>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadeScrollbars="false"
+            android:scrollbars="vertical"/>
+    </ScrollView>
+
 </LinearLayout>
+
