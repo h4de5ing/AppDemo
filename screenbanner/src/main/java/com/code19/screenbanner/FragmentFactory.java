@@ -18,7 +18,7 @@ class FragmentFactory {
 
     static List<Fragment> getFragments() {
         List<Fragment> list = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 1; i++) {
             ImageFragment imageFragment = new ImageFragment();
             Bundle bundle = new Bundle();
             bundle.putString("title", "Image_title......" + i);
@@ -29,6 +29,23 @@ class FragmentFactory {
             b.putString("title", "Text_title_______" + i);
             textFragment.setArguments(b);
             list.add(textFragment);
+        }
+        /**
+         * viewpager个数低于4的时候有一个bug
+         */
+        if (list.size() < 4) {
+            for (int i = 0; i < 1; i++) {
+                ImageFragment imageFragment = new ImageFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("title", "Image_title......" + i);
+                imageFragment.setArguments(bundle);
+                list.add(imageFragment);
+                TextFragment textFragment = new TextFragment();
+                Bundle b = new Bundle();
+                b.putString("title", "Text_title_______" + i);
+                textFragment.setArguments(b);
+                list.add(textFragment);
+            }
         }
         return list;
     }

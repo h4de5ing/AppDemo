@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 mPager.setPageTransformer(true, animaiList.get((int) Math.round(Math.random() * (animaiList.size() - 1))));
                 fragmentList.get(position % fragmentList.size());
+                //mPager.setCurrentItem(position % fragmentList.size());
             }
 
             @Override
@@ -117,13 +118,13 @@ public class MainActivity extends AppCompatActivity {
     public class MyTask implements Runnable {
         void start() {
             mHandler.removeCallbacksAndMessages(null);
-            mHandler.postDelayed(this, 0);
+            mHandler.postDelayed(this, 2000);
         }
 
         @Override
         public void run() {
-            mPager.setCurrentItem(mPager.getCurrentItem() + 1);
-            mHandler.postDelayed(this, 8000);
+            mPager.setCurrentItem(mPager.getCurrentItem()+1);
+            mHandler.postDelayed(this, 2000);
         }
     }
 }
