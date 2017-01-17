@@ -11,6 +11,8 @@ import android.view.ViewConfiguration;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.tencent.smtt.export.external.interfaces.SslError;
+import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest;
 import com.tencent.smtt.export.external.interfaces.WebResourceResponse;
 import com.tencent.smtt.sdk.DownloadListener;
@@ -24,8 +26,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String mHomeUrl = "http://www.yichezhen.cn/Home/Groupon/index.html";
-    private static final String mShengqingUrl = "http://www.yichezhen.cn/Home/Groupon/enroll.html";
+    private static final String mHomeUrl = "https://dev.chezhency.com/Caresell/Activity/index/the/ps2sv0BbBkYcpllIfAO0O0OO0O0O.html";
+    //private static final String mShengqingUrl = "http://www.yichezhen.cn/Home/Groupon/enroll.html";
     private static final String TAG = "x5";
     //private static final String mHomeUrl = "http://app.html5.qq.com/navi/index";
     private WebView mWebView;
@@ -69,14 +71,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                if (!url.equals(mHomeUrl) && !url.equals(mShengqingUrl)) {//拼伙详情
+/*                if (!url.equals(mHomeUrl) && !url.equals(mShengqingUrl)) {//拼伙详情
                     mWebView.evaluateJavascript("getShare();", new ValueCallback<String>() {
                         @Override
                         public void onReceiveValue(String s) {
                             Log.i(TAG, "js返回的内容" + s);
                         }
                     });
-                }
+                }*/
+            }
+
+            @Override
+            public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
+                super.onReceivedSslError(webView, sslErrorHandler, sslError);
+                sslErrorHandler.proceed();
             }
         });
         mWebView.setWebChromeClient(new WebChromeClient() {
